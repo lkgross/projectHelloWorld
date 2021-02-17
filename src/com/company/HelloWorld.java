@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Random;
 
 /**
  * HelloWorld -
@@ -27,6 +28,16 @@ package com.company;
  */
 public class HelloWorld // class header
 {
+    /* A static constant can be declared and assigned a value at
+     * the top of the body of the class and be accessed by all
+     * the static methods.
+     * (Alternatively a static constant can be defined in a single static method
+     * if it is only needed in a single static method.)
+     * Using final will make the compiler complain if you try to change the value.
+     * Constants are typically named with capital letters.
+     */
+    public static final double MI_IN_ONE_KM = 0.621371;
+
     /**
      * main -
      * A method that is required for every Java application
@@ -56,6 +67,9 @@ public class HelloWorld // class header
         computingWithTypes(); // Call the static method.
         System.out.println();
         calculation(); // Call the static method.
+        System.out.println();
+        System.out.println("5 km is " + kmToMiles(5) + " miles.");
+        System.out.println("3 miles is " + milesToKm(3) + " km.");
     }
 
     /**
@@ -97,7 +111,15 @@ public class HelloWorld // class header
         b = a + 3;
         // We can also do inline initialization:
         int c = 17;
-        System.out.println((double) c);
+        String numberString = "15";
+        // Do type conversion
+        System.out.println((double) c); // from int to double
+        System.out.println("Convert \"15\" to a double:");
+        System.out.println(Double.parseDouble("15")); // from String to double
+        System.out.println("Check whether numberString as an integer is " +
+                "greater than 2:");
+        System.out.println(Integer.parseInt(numberString) > 2); // from String to int
+
         // Short form of the inline initialization of a String:
         String name = "Gross";
         // Long form of the inline initialization of a String:
@@ -107,7 +129,7 @@ public class HelloWorld // class header
         System.out.println(name2);
         System.out.println(name3);
         // Use the String method equals to compare Strings.
-        System.out.println(name.equals(name2));
+        System.out.println(!name.equals(name2));
         System.out.println(name.equals(name3)); // correctly evaluates to true
         // Using == instead CAN GIVE WRONG RESULTS!!
         System.out.println(name == name3); // erroneously gives false!!
@@ -149,5 +171,19 @@ public class HelloWorld // class header
         System.out.println(3 == 2);
         System.out.println(3 != 2);
 
+        // Do inline initialization of a Random object.
+        Random rand = new Random();
+        // Simulate the roll of a six-sided die.
+        System.out.println("Your die roll is:");
+        // Call the nextInt method on the Random object rand.
+        System.out.println(rand.nextInt(6) + 1);
+    }
+
+    public static double kmToMiles(double km){
+        return km * MI_IN_ONE_KM;
+    }
+
+    public static double milesToKm(double miles){
+        return miles / MI_IN_ONE_KM;
     }
 }
