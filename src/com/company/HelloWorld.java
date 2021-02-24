@@ -62,15 +62,17 @@ public class HelloWorld // class header
          */
 
         // Make calls to the static method printExperiments. Print the returned valuess.
-        System.out.println(printExperiments("Hello"));
+        // System.out.println(printExperiments("Hello"));
         // System.out.println(printExperiments("Greetings"));
         // System.out.println(printExperiments("Hola"));
         // System.out.println(printExperiments("Salutations"));
+        /*
         System.out.println();
         calculation(); // Call the static method.
         System.out.println();
         System.out.println("5 km is " + kmToMiles(5) + " miles.");
         System.out.println("3 miles is " + milesToKm(3) + " km.");
+         */
         computingWithTypes(); // Call the static method.
         System.out.println();
     }
@@ -150,7 +152,7 @@ public class HelloWorld // class header
         System.out.println("Does " + name + " start with \"Gr\"? " +
                 name.startsWith("Gr") );
         System.out.println("Does " + name + " end with \"t\"? " +
-                name.startsWith("t") );
+                name.endsWith("t") );
         System.out.println("Does " + name + " contain \"ross\"? " +
                 name.contains("ross") );
         System.out.println(name.toUpperCase());
