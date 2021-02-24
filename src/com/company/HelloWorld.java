@@ -1,5 +1,7 @@
 package com.company;
+import java.util.Locale;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * HelloWorld -
@@ -37,6 +39,7 @@ public class HelloWorld // class header
      * Constants are typically named with capital letters.
      */
     public static final double MI_IN_ONE_KM = 0.621371;
+    public static final Scanner KEYBOARD = new Scanner(System.in);
 
     /**
      * main -
@@ -58,31 +61,35 @@ public class HelloWorld // class header
          * Keywords public and private are called access modifiers.
          */
 
-        // Make calls to the static method printExperiments. Print the returned values.
-        System.out.println(printExperiments("Hello", "Jupiter"));
-        System.out.println(printExperiments("Greetings", "Venus"));
-        System.out.println(printExperiments("Hola", "Mars"));
-        System.out.println(printExperiments("Salutations", "Uranus"));
-        System.out.println();
-        computingWithTypes(); // Call the static method.
+        // Make calls to the static method printExperiments. Print the returned valuess.
+        System.out.println(printExperiments("Hello"));
+        // System.out.println(printExperiments("Greetings"));
+        // System.out.println(printExperiments("Hola"));
+        // System.out.println(printExperiments("Salutations"));
         System.out.println();
         calculation(); // Call the static method.
         System.out.println();
         System.out.println("5 km is " + kmToMiles(5) + " miles.");
         System.out.println("3 miles is " + milesToKm(3) + " km.");
+        computingWithTypes(); // Call the static method.
+        System.out.println();
     }
 
     /**
      * printExperiments -
      * A method to try out print, println, and escape characters like \n
      * @param greeting
-     * @param planet
      * @return
      */
-    public static String printExperiments(String greeting, String planet) {
+    public static String printExperiments(String greeting) {
+        System.out.print("What planet is this? ");
+        String planet = KEYBOARD.next(); // Read the user's input as a string.
         System.out.println("The print method does not attach a newline character " +
                 "to the end of the string.");
-        System.out.print(greeting + planet);
+        System.out.println(greeting + " " + planet);
+        System.out.print("How many years have you lived here? ");
+        double years = KEYBOARD.nextDouble();
+        System.out.println(years + "years is a long time!");
         // We can include a newline character (\n) explicitly:
         System.out.print("Hello, World!\n");
         // The newline character advances the cursor to the next line for subsequent printing.
@@ -133,6 +140,22 @@ public class HelloWorld // class header
         System.out.println(name.equals(name3)); // correctly evaluates to true
         // Using == instead CAN GIVE WRONG RESULTS!!
         System.out.println(name == name3); // erroneously gives false!!
+        // Try other String methods from the Java Reference Card.
+        System.out.println("The length of " + name + " is " + name.length() + ".");
+        System.out.println("At index 1 is " + name.charAt(1) + ".");
+        System.out.println("The substring from index 1 to 5, not including 5 is " +
+                name.substring(1, 5) + ".");
+        System.out.println("The index of the \'G\' is " +
+                name.indexOf("G") + ".");
+        System.out.println("Does " + name + " start with \"Gr\"? " +
+                name.startsWith("Gr") );
+        System.out.println("Does " + name + " end with \"t\"? " +
+                name.startsWith("t") );
+        System.out.println("Does " + name + " contain \"ross\"? " +
+                name.contains("ross") );
+        System.out.println(name.toUpperCase());
+        System.out.println(name.replace("Gr", "R"));
+
         return; // optional statement when return type is void
     }
 
