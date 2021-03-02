@@ -1,5 +1,4 @@
 package com.company;
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -156,6 +155,7 @@ public class HelloWorld // class header
         System.out.println("Does " + name + " contain \"ross\"? " +
                 name.contains("ross") );
         System.out.println(name.toUpperCase());
+        System.out.println(name);
         System.out.println(name.replace("Gr", "R"));
 
         return; // optional statement when return type is void
@@ -201,7 +201,8 @@ public class HelloWorld // class header
         // Simulate the roll of a six-sided die.
         System.out.println("Your die roll is:");
         // Call the nextInt method on the Random object rand.
-        System.out.println(rand.nextInt(6) + 1);
+        int dieValue = rand.nextInt(6) + 1;
+        System.out.println(dieValue);
     }
 
     public static double kmToMiles(double km){
