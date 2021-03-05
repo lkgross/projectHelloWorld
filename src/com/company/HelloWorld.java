@@ -60,20 +60,25 @@ public class HelloWorld // class header
          * Keywords public and private are called access modifiers.
          */
 
-        // Make calls to the static method printExperiments. Print the returned valuess.
+        for (int i = 0; i < 3; i++){
+            System.out.print("How should I greet you? ");
+            String greeting = KEYBOARD.next();
+            printExperiments(greeting);
+        }
+
+        // Make calls to the static method printExperiments. Print the returned values.
         // System.out.println(printExperiments("Hello"));
-        // System.out.println(printExperiments("Greetings"));
         // System.out.println(printExperiments("Hola"));
         // System.out.println(printExperiments("Salutations"));
-        /*
-        System.out.println();
+        // System.out.println();
         calculation(); // Call the static method.
+        /*
         System.out.println();
         System.out.println("5 km is " + kmToMiles(5) + " miles.");
         System.out.println("3 miles is " + milesToKm(3) + " km.");
          */
-        computingWithTypes(); // Call the static method.
-        System.out.println();
+        // computingWithTypes(); // Call the static method.
+        // System.out.println();
     }
 
     /**
@@ -82,12 +87,14 @@ public class HelloWorld // class header
      * @param greeting
      * @return
      */
-    public static String printExperiments(String greeting) {
+    public static void printExperiments(String greeting) {
         System.out.print("What planet is this? ");
         String planet = KEYBOARD.next(); // Read the user's input as a string.
-        System.out.println("The print method does not attach a newline character " +
+        /* System.out.println("The print method does not attach a newline character " +
                 "to the end of the string.");
+         */
         System.out.println(greeting + " " + planet);
+        /*
         System.out.print("How many years have you lived here? ");
         double years = KEYBOARD.nextDouble();
         System.out.println(years + "years is a long time!");
@@ -100,7 +107,7 @@ public class HelloWorld // class header
         System.out.println();
         // Another escape character is \'.
         System.out.print("I just arrived from \'Tatooine\'!\n");
-        return "Tatooine";
+         */
     }
 
     /**
@@ -203,6 +210,20 @@ public class HelloWorld // class header
         // Call the nextInt method on the Random object rand.
         int dieValue = rand.nextInt(6) + 1;
         System.out.println(dieValue);
+
+        System.out.println();
+        int a = 5;
+        System.out.println(a);
+
+        a = a+1;
+        System.out.println(a);
+        // See Java handout on combined assignment operators.
+        a += 1;
+        System.out.println(a);
+        // See Java handout on increment [a++ and ++a] and decrement in Java.
+        System.out.println(++a);
+        System.out.println(a);
+
     }
 
     public static double kmToMiles(double km){
